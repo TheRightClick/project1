@@ -23,7 +23,7 @@ const imgs = [
     {
       dog: "https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png",
       cat:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DmYjikawtjmk7ZBtOHdXvcO_BGEVbPWqxw&usqp=CAU",
-      racoon: "https://static.thenounproject.com/png/2505434-200.png"
+      raccoon: "https://static.thenounproject.com/png/2505434-200.png"
     }
 ]
 let choices = []
@@ -34,16 +34,14 @@ function gameMode2() {
   const scissors = document.getElementById('scissors');
   rock.style.backgroundImage = `url(${imgs[1].dog})`
   paper.style.backgroundImage = `url(${imgs[1].cat})`
-  scissors.style.backgroundImage = `url(${imgs[1].racoon})`
+  scissors.style.backgroundImage = `url(${imgs[1].raccoon})`
   choices = ["dog", "cat", "raccoon"];
 }
 
 
 function computerChooses() {
   let randomNumberComputer = Math.floor(Math.random() * 3);
-  //let randomNumberPlayer = Math.floor(Math.random() * 3);
   computer.choice = choices[randomNumberComputer];
-  //player.choice = choices[randomNumberPlayer];
 }
 
 function rock() {
@@ -74,6 +72,12 @@ function scissors() {
 
 const rest = () => {
   let choices = ["rock", "paper", "scissors"];
+  const rock = document.getElementById('rock');
+  const paper = document.getElementById('paper');
+  const scissors = document.getElementById('scissors');
+  rock.style.backgroundImage = `url(${imgs[0].rock})`
+  paper.style.backgroundImage = `url(${imgs[0].paper})`
+  scissors.style.backgroundImage = `url(${imgs[0].scissors})`
   let results = document.createElement("h1");
   resultsDiv = document.getElementById('resultsDiv');
   results.textContent = ("Let's get ready to rumble!");
