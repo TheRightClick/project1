@@ -1,3 +1,9 @@
+let choices = []
+
+let rockItem = document.getElementById('rock');
+let paperItem = document.getElementById('paper');
+let scissorsItem = document.getElementById('scissors');
+
 
 
 const player = {
@@ -9,10 +15,6 @@ const computer = {
   choice: null, 
   score: 0
   };
-
-
-
-
 
 const imgs = [
      {  
@@ -26,22 +28,35 @@ const imgs = [
       raccoon: "https://static.thenounproject.com/png/2505434-200.png"
     }
 ]
-let choices = []
 
-function gameMode2() {
-  const rock = document.getElementById('rock');
-  const paper = document.getElementById('paper');
-  const scissors = document.getElementById('scissors');
-  rock.style.backgroundImage = `url(${imgs[1].dog})`
-  paper.style.backgroundImage = `url(${imgs[1].cat})`
-  scissors.style.backgroundImage = `url(${imgs[1].raccoon})`
-  choices = ["dog", "cat", "raccoon"];
+class Game {
+  constructor (modeImgs) {
+      choices = [Object.keys(modeImgs)[0],Object.keys(modeImgs)[1],Object.keys(modeImgs)[2]]
+      let img1 = Object.values(modeImgs)[0]
+      let img2 = Object.values(modeImgs)[1]
+      let img3 = Object.values(modeImgs)[2]
+      rockItem.style.backgroundImage = `url(${img1})`
+      paperItem.style.backgroundImage = `url(${img2})`
+      scissorsItem.style.backgroundImage = `url(${img3})`
+      let  results = document.createElement("h1");
+      let resultsDiv = document.getElementById('resultsDiv');
+      results.textContent = ("Let's get ready to rumble!");
+      document.getElementById('resultsDiv').appendChild(results);
+  }
 }
+
+
+const changeGame = (imgSet, modeNum) =>{
+  // resultsDiv.removeChild(resultsDiv.childNodes[0, 1]);
+  modeNum = new Game (imgSet)
+}  
+
 
 
 function computerChooses() {
   let randomNumberComputer = Math.floor(Math.random() * 3);
   computer.choice = choices[randomNumberComputer];
+  
 }
 
 function rock() {
@@ -58,7 +73,7 @@ function paper() {
  computerChooses();
  compareChoices();
  console.log(player.score)
-  console.log(computer.score)
+ console.log(computer.score)
 };
 
 function scissors() {
@@ -70,19 +85,19 @@ function scissors() {
   console.log(computer.score)
 };
 
-const rest = () => {
-  let choices = ["rock", "paper", "scissors"];
-  const rock = document.getElementById('rock');
-  const paper = document.getElementById('paper');
-  const scissors = document.getElementById('scissors');
-  rock.style.backgroundImage = `url(${imgs[0].rock})`
-  paper.style.backgroundImage = `url(${imgs[0].paper})`
-  scissors.style.backgroundImage = `url(${imgs[0].scissors})`
-  let results = document.createElement("h1");
-  resultsDiv = document.getElementById('resultsDiv');
-  results.textContent = ("Let's get ready to rumble!");
-  document.getElementById('resultsDiv').appendChild(results);
-}
+// const rest = () => {
+//   let choices = ["rock", "paper", "scissors"];
+//   const rock = document.getElementById('rock');
+//   const paper = document.getElementById('paper');
+//   const scissors = document.getElementById('scissors');
+//   rock.style.backgroundImage = `url(${imgs[0].rock})`
+//   paper.style.backgroundImage = `url(${imgs[0].paper})`
+//   scissors.style.backgroundImage = `url(${imgs[0].scissors})`
+//   let results = document.createElement("h1");
+//   resultsDiv = document.getElementById('resultsDiv');
+//   results.textContent = ("Let's get ready to rumble!");
+//   document.getElementById('resultsDiv').appendChild(results);
+// }
 
 
 function compareChoices() {
@@ -97,7 +112,6 @@ function compareChoices() {
  results.textContent = ("The computer wins! The computer chose " + computer.choice + ", the player chose " + player.choice)
     document.getElementById('resultsDiv').appendChild(results);
     computer.score += 1
-  
 } else {
     results.textContent = ("The player wins! The computer chose " + computer.choice + ", the player chose " + player.choice)
   document.getElementById('resultsDiv').appendChild(results);
@@ -105,25 +119,19 @@ function compareChoices() {
 }
 }
 
-function addChoices() {
-  if(player.score > 5){
-    const div = document.createElement('div')
-    const gamArea = document.getElementById('#gameArea')
-    div.addClass('Option')
-    gameArea.appendChild(div)
-    
-  }
-}
 
-rest();
-addChoices();
+changeGame(imgs[0], "mode1")
+
 document.getElementById('rock').onclick = rock;
 document.getElementById('paper').onclick = paper;
 document.getElementById('scissors').onclick = scissors;
-document.getElementById('test').onclick = gameMode2;
+document.getElementById("test").addEventListener("click", function() {
+  resultsDiv.removeChild(resultsDiv.childNodes[0, 1]);
+  changeGame(imgs[1], "mode2");
+})
+// document.getElementById('test').onclick = changeGame(imgs[1], "mode2");
 
-
-console.log(imgs[1].dog)
+// console.log(Object.keys(imgs[1]))
 
 $(() => {
    

@@ -22,6 +22,8 @@
     font-size: 1rem;
     line-height: 2;
     display: flex;
+            /* flex-wrap: wrap; */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
     margin: 0;
@@ -29,6 +31,28 @@
     background: var(--backgroundColor);
   }
   
+  #scoreboard {
+    background-color: rgb(14, 43, 14);
+    display: flex;
+    justify-content: center;
+    font-family: 'Press Start 2P';
+    color: white;
+  }
+
+  #playerScore {
+    background-color: black;
+    width: 10%;
+    font-family: 'Press Start 2P';
+    color: white;
+  }
+
+  #computerScore {
+    background-color: black;
+    width: 10%;
+    font-family: 'Press Start 2P';
+    color: white;
+  }
+
   button {
     position: relative;
     display: inline-block;
@@ -93,21 +117,21 @@
   }
   
   #rock {
-      background-image: url("https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png");
+      /* background-image: url("https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png"); */
       background-size: 300px 220px;
       background-position: center;
       background-repeat: no-repeat;
   }
   
   #paper {
-    background-image: url("https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png");
+    /* background-image: url("https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png"); */
     background-size: 300px 220px;
       background-position: center;
       background-repeat: no-repeat;
   }
   
   #scissors {
-    background-image: url("https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png");
+    /* background-image: url("https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png"); */
     background-size: 300px 220px;
       background-position: center;
       background-repeat: no-repeat;
@@ -115,48 +139,44 @@
   
   #instructions {
     display: flex;
-    align-self: start;
-    margin: auto;
-    margin-top: 15%;
-    margin-bottom: 45%;
-    position: absolute;
-    width: 35%
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    
   }
 
   #instructions h1 {
-      width: 100%;
+      width: 40%;
       justify-content: center;
       font-size:calc(10px + 1vw);
       font-family: 'Press Start 2P';
   }
   
   .selectionButtons{
-    position: static;
-    padding-top: 24%;
+    width: 100%;
     margin:auto;
     display:flex;
+    justify-content: center;
   }
   
   #resultsDiv {
     display: flex;
-    position: absolute;
-    align-self:flex-end;
+    width: 100%;
     margin-bottom: 15%;
+    margin-top: 5%;
     justify-content: center;
+    align-items: stretch;
   }
 
   #resultsDiv h1 {
-      /* align-self: flex-end; */
       color: blue;
-      width: 95%;
       font-size:calc(40% + 1vw);
       font-family: 'Press Start 2P';
+      justify-content: center;
   }
 
    #newIcons {
     background: white;
-    align-self: flex-end;
-    width:35%;
-    height:25%;
+    width: 100%;
    }
   
