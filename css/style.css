@@ -6,8 +6,8 @@
     --colorShadeA: rgb(95, 95, 95);
     --colorShadeB: rgb(255, 0, 0);
     --colorShadeC: rgb(160, 160, 160);
-    --colorShadeD: rgb(187, 232, 211);
-    --colorShadeE: rgb(205, 255, 400);
+    --colorShadeD: rgb(255, 255, 255);
+    --colorShadeE: rgb(255, 255, 255);
   }
   
   @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
@@ -101,14 +101,16 @@
   
   #paper {
     background-image: url("https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png");
-      background-size: 300px 220px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DmYjikawtjmk7ZBtOHdXvcO_BGEVbPWqxw&usqp=CAU");
+    background-size: 300px 220px;
       background-position: center;
       background-repeat: no-repeat;
   }
   
   #scissors {
     background-image: url("https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png");
-      background-size: 300px 220px;
+    background-image: url("https://static.thenounproject.com/png/2505434-200.png");
+    background-size: 300px 220px;
       background-position: center;
       background-repeat: no-repeat;
   }
@@ -151,4 +153,9 @@
       font-size:calc(40% + 1vw);
       font-family: 'Press Start 2P';
   }
+
+   #newIcons {
+    background: white;
+    align-self: flex-end;
+   }
   
