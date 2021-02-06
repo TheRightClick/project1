@@ -11,18 +11,6 @@ const computer = {
   };
 
 
-const images = [
-  {
-      rock: "https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png",
-      paper: "https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png",
-      scissors: "https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png"
-  },
-  {
-      dog: "https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png",
-      cat: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DmYjikawtjmk7ZBtOHdXvcO_BGEVbPWqxw&usqp=CAU",
-      raccoon:"https://static.thenounproject.com/png/2505434-200.png"
-  }
-]
 
 
 
@@ -38,9 +26,17 @@ const imgs = [
       racoon: "https://static.thenounproject.com/png/2505434-200.png"
     }
 ]
-const choices = ["Rock","Paper", "Scissors"]
+let choices = []
 
-
+function gameMode2() {
+  const rock = document.getElementById('rock');
+  const paper = document.getElementById('paper');
+  const scissors = document.getElementById('scissors');
+  rock.style.backgroundImage = `url(${imgs[1].dog})`
+  paper.style.backgroundImage = `url(${imgs[1].cat})`
+  scissors.style.backgroundImage = `url(${imgs[1].racoon})`
+  choices = ["dog", "cat", "raccoon"];
+}
 
 
 function computerChooses() {
@@ -55,8 +51,7 @@ function rock() {
   player.choice = choices[0];
   computerChooses();
   compareChoices();
-  console.log(player.score)
-  console.log(computer.score)
+  
 };
 
 function paper() {
@@ -77,14 +72,14 @@ function scissors() {
   console.log(computer.score)
 };
 
-function rest() {
+const rest = () => {
+  let choices = ["rock", "paper", "scissors"];
   let results = document.createElement("h1");
   resultsDiv = document.getElementById('resultsDiv');
-  results.textContent = ("Let's get ready to rumble!")
+  results.textContent = ("Let's get ready to rumble!");
   document.getElementById('resultsDiv').appendChild(results);
-
-
 }
+
 
 function compareChoices() {
   let results = document.createElement("h1");
@@ -115,15 +110,16 @@ function addChoices() {
     
   }
 }
+
 rest();
 addChoices();
 document.getElementById('rock').onclick = rock;
 document.getElementById('paper').onclick = paper;
 document.getElementById('scissors').onclick = scissors;
+document.getElementById('test').onclick = gameMode2;
 
 
-
-
+console.log(imgs[1].dog)
 
 $(() => {
    
