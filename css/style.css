@@ -94,6 +94,7 @@
   
   #rock {
       background-image: url("https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png");
+      background-image: url("https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png");
       background-size: 300px 220px;
       background-position: center;
       background-repeat: no-repeat;
@@ -136,20 +137,21 @@
     position: static;
     padding-top: 24%;
     margin:auto;
+    display:flex;
   }
   
   #resultsDiv {
     display: flex;
     position: absolute;
     align-self:flex-end;
-    margin-bottom: 10%;
-    /* align-self:baseline; */
+    margin-bottom: 15%;
+    justify-content: center;
   }
 
   #resultsDiv h1 {
-      align-self: flex-end;
+      /* align-self: flex-end; */
       color: blue;
-      width: 100%;
+      width: 95%;
       font-size:calc(40% + 1vw);
       font-family: 'Press Start 2P';
   }

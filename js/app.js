@@ -11,16 +11,36 @@ const computer = {
   };
 
 
-const images = {
-  source: [
-      "https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png",
-      "https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png",
-      "https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png",
-      "https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png"
-  ]
-}
+const images = [
+  {
+      rock: "https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png",
+      paper: "https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png",
+      scissors: "https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png"
+  },
+  {
+      dog: "https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png",
+      cat: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DmYjikawtjmk7ZBtOHdXvcO_BGEVbPWqxw&usqp=CAU",
+      raccoon:"https://static.thenounproject.com/png/2505434-200.png"
+  }
+]
 
-const choices = ["Rock","Paper", "Scissors"];
+
+
+const imgs = [
+     {  
+      rock: "https://img.pngio.com/rock-rock-paper-scissors-clipart-transparent-png-800x800-rock-paper-scissors-png-820_865.png",
+      paper:  "https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png",
+      scissors: "https://www.kindpng.com/picc/m/502-5025731_scissors-clipart-png-download-rock-paper-scissors-clipart.png" 
+    },
+    {
+      dog: "https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png",
+      cat:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DmYjikawtjmk7ZBtOHdXvcO_BGEVbPWqxw&usqp=CAU",
+      racoon: "https://static.thenounproject.com/png/2505434-200.png"
+    }
+]
+const choices = ["Rock","Paper", "Scissors"]
+
+
 
 
 function computerChooses() {
@@ -62,9 +82,7 @@ function rest() {
   resultsDiv = document.getElementById('resultsDiv');
   results.textContent = ("Let's get ready to rumble!")
   document.getElementById('resultsDiv').appendChild(results);
-  const btn1 = document.getElementById('#rock')
-  const btn2 = document.getElementById('#paper')
-  const btn2 = document.getElementById('#scissors')
+
 
 }
 
