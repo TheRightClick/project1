@@ -1,6 +1,6 @@
-* {
+/* * {
     border: solid gold;
-}
+} */
 :root {
     --backgroundColor: rgba(224, 224, 224);
     --colorShadeA: rgb(95, 95, 95);
@@ -44,6 +44,9 @@
     width: 10%;
     font-family: 'Press Start 2P';
     color: white;
+    text-align: center;
+    font-size:calc(10px + 1vw);
+    
   }
 
   #computerScore {
@@ -51,6 +54,8 @@
     width: 10%;
     font-family: 'Press Start 2P';
     color: white;
+    text-align: center;
+    font-size:calc(10px + 1vw);
   }
 
   button {
@@ -95,6 +100,9 @@
        transition: all 175ms cubic-bezier(0, 0, 1, 1);
   }
   
+  button.button:focus {
+    outline:0;
+  }
   
   button.button:hover {
     background: var(--colorShadeD);
@@ -179,4 +187,25 @@
     background: white;
     width: 100%;
    }
+
+  #mode2 {
+    background-color: maroon;
+    font-family: 'Press Start 2P';
+    color: white;
+    border: 2% gold
+  }
+
+  #mode1 {
+    background-color: blueviolet;
+    font-family: 'Press Start 2P';
+    color: white;
+    border: 2% gold
+  }
+
+  #mode3 {
+    background-color: goldenrod;
+    font-family: 'Press Start 2P';
+    color: white;
+    border: 2% gold
+  }
   

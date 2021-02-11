@@ -26,8 +26,13 @@ const imgs = [
       dog: "https://s.clipartkey.com/mpngs/s/92-920953_transparent-cute-mouth-png-cartoon-dog-face-black.png",
       cat:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DmYjikawtjmk7ZBtOHdXvcO_BGEVbPWqxw&usqp=CAU",
       raccoon: "https://static.thenounproject.com/png/2505434-200.png"
+    },
+    {
+    'gallo claudio': "https://i.pinimg.com/originals/86/55/d6/8655d69e70120441d9a4a4e1d4fd099b.gif",
+    'gallo del ciello':"https://pixy.org/src/468/4682865.png",
+    zoro: "https://cdn.pixabay.com/photo/2017/01/31/13/32/animals-2024072__340.png"
     }
-]
+  ]
 
 class Game {
   constructor (modeImgs) {
@@ -46,8 +51,7 @@ class Game {
 }
 
 
-const changeGame = (imgSet, modeNum) =>{
-  // resultsDiv.removeChild(resultsDiv.childNodes[0, 1]);
+const changeGame = (imgSet) =>{
   modeNum = new Game (imgSet)
 }  
 
@@ -64,7 +68,8 @@ function rock() {
   player.choice = choices[0];
   computerChooses();
   compareChoices();
-  
+  document.getElementById('playerScore').innerText = player.score
+  document.getElementById('computerScore').innerText = computer.score
 };
 
 function paper() {
@@ -72,8 +77,8 @@ function paper() {
  player.choice = choices[1] ;
  computerChooses();
  compareChoices();
- console.log(player.score)
- console.log(computer.score)
+ document.getElementById('playerScore').innerText = player.score
+ document.getElementById('computerScore').innerText = computer.score
 };
 
 function scissors() {
@@ -81,24 +86,9 @@ function scissors() {
   player.choice = choices[2] ;
   computerChooses();
   compareChoices();
-  console.log(player.score)
-  console.log(computer.score)
+  document.getElementById('playerScore').innerText = player.score
+  document.getElementById('computerScore').innerText = computer.score
 };
-
-// const rest = () => {
-//   let choices = ["rock", "paper", "scissors"];
-//   const rock = document.getElementById('rock');
-//   const paper = document.getElementById('paper');
-//   const scissors = document.getElementById('scissors');
-//   rock.style.backgroundImage = `url(${imgs[0].rock})`
-//   paper.style.backgroundImage = `url(${imgs[0].paper})`
-//   scissors.style.backgroundImage = `url(${imgs[0].scissors})`
-//   let results = document.createElement("h1");
-//   resultsDiv = document.getElementById('resultsDiv');
-//   results.textContent = ("Let's get ready to rumble!");
-//   document.getElementById('resultsDiv').appendChild(results);
-// }
-
 
 function compareChoices() {
   let results = document.createElement("h1");
@@ -121,18 +111,24 @@ function compareChoices() {
 
 
 changeGame(imgs[0], "mode1")
-
 document.getElementById('rock').onclick = rock;
 document.getElementById('paper').onclick = paper;
 document.getElementById('scissors').onclick = scissors;
-document.getElementById("test").addEventListener("click", function() {
+
+document.getElementById("mode2").addEventListener("click", function() {
   resultsDiv.removeChild(resultsDiv.childNodes[0, 1]);
-  changeGame(imgs[1], "mode2");
+  changeGame(imgs[1]);
 })
-// document.getElementById('test').onclick = changeGame(imgs[1], "mode2");
 
-// console.log(Object.keys(imgs[1]))
+document.getElementById("mode1").addEventListener("click", function() {
+  resultsDiv.removeChild(resultsDiv.childNodes[0, 1]);
+  changeGame(imgs[0]);
+})
+document.getElementById("mode3").addEventListener("click", function() {
+  resultsDiv.removeChild(resultsDiv.childNodes[0, 1]);
+  changeGame(imgs[2]);
+})
 
-$(() => {
-   
-  })
+document.getElementById('playerScore').innerText = player.score
+document.getElementById('computerScore').innerText = computer.score
+
