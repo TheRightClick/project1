@@ -7,3 +7,4 @@ Rockpaperscissors game
 -user has option of different hand shapes
 -user has real cool buttons
 
+<img src= "css/wireframe.jpg">
