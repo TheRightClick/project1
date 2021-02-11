@@ -44,7 +44,7 @@ class Game {
       paperItem.style.backgroundImage = `url(${img2})`
       scissorsItem.style.backgroundImage = `url(${img3})`
       let  results = document.createElement("h1");
-      let resultsDiv = document.getElementById('resultsDiv');
+      // let resultsDiv = document.getElementById('resultsDiv');
       results.textContent = ("Let's get ready to rumble!");
       document.getElementById('resultsDiv').appendChild(results);
   }
